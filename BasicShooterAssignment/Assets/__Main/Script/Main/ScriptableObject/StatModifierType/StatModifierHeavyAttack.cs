@@ -3,10 +3,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = ScriptableObjectReferences.HeavyAttackName,menuName =ScriptableObjectReferences.HeavyAttackDirectory )]
-    public class StatModifierHeavyAttack:ScriptableObject,IStatModifierType
+    public class StatModifierHeavyAttack:StatModifierTypeBase
     {
-        public StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.HeavyAttack;
+        public override StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.HeavyAttack;
 
         [SerializeField] private CharacterStats _stats;
-        public ICharacterStats ChangingStats => _stats;
+        public override ICharacterStats ChangingStats => _stats;
     }

@@ -13,9 +13,10 @@ public class StatsCalculator : IStatsCalculator
         *characterStats.AttackDamagePercentModifier;
     }
 
-    public float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,float upgradeAbsoluteDamage)
+    public float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,
+        ICharacterStats upgrade)
     {
-       return (baseDamage+ upgradeAbsoluteDamage)
+       return (baseDamage+ upgrade.CharacterDamageAbsolute)
        *characterStats.CharacterUpgradePercentageModifier;
     }
 }

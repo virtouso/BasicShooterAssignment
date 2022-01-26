@@ -7,5 +7,5 @@ public interface IStatsCalculator
    float CalculateBaseDamage(  ICharacterStats characterStats);
 
    float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,
-      float upgradeAbsoluteDamage);
+     ICharacterStats upgrade);
 }
