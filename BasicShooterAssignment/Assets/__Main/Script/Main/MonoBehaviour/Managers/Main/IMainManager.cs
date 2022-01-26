@@ -6,5 +6,5 @@ public interface IMainManager
 {
  IEnemy GetEnemy(Transform transform);
  IUpgradeDrop GetDrop(Transform transform);
-
+ void DisplayMessage(string message,Transform referenceEntity);
 }

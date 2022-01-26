@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DefaultEnemy : MonoBehaviour, IEnemy
 {
@@ -8,6 +9,14 @@ public class DefaultEnemy : MonoBehaviour, IEnemy
     public void ApplyAttack(float appliedDamage)
     {
         _health -= appliedDamage;
-        _sprite.color= Color.yellow;
+        _sprite.color=  new Color (0, 0, 1, 1);
+        StartCoroutine(DisableDelayed());
     }
+
+    private IEnumerator DisableDelayed()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
+    
 }

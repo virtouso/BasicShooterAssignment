@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public interface IStatsCalculator<T> where T: StatModifierTypeBase
+public interface IStatsCalculator
 {
    float CalculateBaseDamage(  ICharacterStats characterStats);
 
-   float CalculateUpgrade(ICharacterStats characterStats, 
-    T modifier);
+   float CalculateUpgrade<T>(ICharacterStats characterStats, float baseDamage,
+    T modifier)where T: StatModifierTypeBase;
 }

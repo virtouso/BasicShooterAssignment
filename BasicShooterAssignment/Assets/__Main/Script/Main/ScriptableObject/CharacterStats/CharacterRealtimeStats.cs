@@ -13,12 +13,12 @@ public class CharacterRealtimeStats :ICharacterStats
     public float AttackDamagePercentModifier { get; set; }
 
 
-    public CharacterRealtimeStats(float characterDamageAbsolute, float weaponDamageAbsolute, float characterUpgradePercentageModifier, float attackDamageAbsoluteModifier, float attackDamagePercentModifier)
+    public CharacterRealtimeStats(ICharacterStats stats)
     {
-        CharacterDamageAbsolute = characterDamageAbsolute;
-        WeaponDamageAbsolute = weaponDamageAbsolute;
-        CharacterUpgradePercentageModifier = characterUpgradePercentageModifier;
-        AttackDamageAbsoluteModifier = attackDamageAbsoluteModifier;
-        AttackDamagePercentModifier = attackDamagePercentModifier;
+        CharacterDamageAbsolute =stats. CharacterDamageAbsolute;
+        WeaponDamageAbsolute =stats. WeaponDamageAbsolute;
+        CharacterUpgradePercentageModifier =stats. CharacterUpgradePercentageModifier;
+        AttackDamageAbsoluteModifier =stats.AttackDamageAbsoluteModifier;
+        AttackDamagePercentModifier =stats.AttackDamagePercentModifier;
     }
 }

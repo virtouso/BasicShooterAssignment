@@ -16,4 +16,4 @@ MonoBehaviour:
   _weaponDamageAbsolute: 200
   _characterUpgradePercentageModifier: 5
   _attackDamageAbsoluteModifier: 50
-  _attackDamagePercentModifier: 6
+  _attackDamagePercentModifier: 6.75

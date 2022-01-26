@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour,IMainManager
 {
-
+    [SerializeField] private Camera _camera;
+    [SerializeField] private TextMeshProUGUI _text;
     public IEnemy GetEnemy(Transform transform)
     {
         return _enemies[transform];
@@ -15,10 +17,23 @@ public class MainManager : MonoBehaviour,IMainManager
     {
         return _drops[transform];
     }
+
+    public void DisplayMessage(string message, Transform referenceEntity)
+    {
+        _text.gameObject.SetActive(true);
+        Vector3 goalPosition = _camera.WorldToScreenPoint(referenceEntity.position);
+        _text.transform.position = goalPosition;
+        _text.text = message;
+    }
+
+    private IEnumerator HideDelayed()
+    {
+        yield return new WaitForSeconds(1f);
+        _text.gameObject.SetActive(false);
+        
+    }
     
-    
-    
-    
+
     private Dictionary<Transform, IEnemy> _enemies;
     private Dictionary<Transform, IUpgradeDrop> _drops;
 
