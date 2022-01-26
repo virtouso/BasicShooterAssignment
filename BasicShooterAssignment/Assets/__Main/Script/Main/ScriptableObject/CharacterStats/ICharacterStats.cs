@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface ICharacterStats 
 {
-  float CharacterDamageAbsolute { get; }
-  float WeaponDamageAbsolute { get; }
-  float CharacterUpgradePercentageModifier { get; }
-  float AttackDamageAbsoluteModifier { get; }
-  float AttackDamagePercentModifier { get; }
+  float CharacterDamageAbsolute { get; set; }
+  float WeaponDamageAbsolute { get; set; }
+  float CharacterUpgradePercentageModifier { get; set; }
+  float AttackDamageAbsoluteModifier { get; set; }
+  float AttackDamagePercentModifier { get; set; }
 }

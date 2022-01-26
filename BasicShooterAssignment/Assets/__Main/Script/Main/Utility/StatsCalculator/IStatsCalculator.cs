@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IStatsCalculator<T>
+public interface IStatsCalculator
 {
-   T CalculateDamageDealed( ICharacterStats characterStats);
-   T CalculateBaseDamage();
+   float CalculateBaseDamage(  ICharacterStats characterStats);
+
+   float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,
+      float upgradeAbsoluteDamage);
 }

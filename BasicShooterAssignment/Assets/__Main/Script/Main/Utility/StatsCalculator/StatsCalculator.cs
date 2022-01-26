@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class StatsCalculator<T> : IStatsCalculator<T>
+public class StatsCalculator : IStatsCalculator
 {
-    public T CalculateDamageDealed(ICharacterStats characterStats)
+    public float CalculateBaseDamage(ICharacterStats characterStats)
     {
-        throw new System.NotImplementedException();
+        
+        return characterStats.CharacterDamageAbsolute
+               * (characterStats.CharacterUpgradePercentageModifier+characterStats.AttackDamageAbsoluteModifier)
+        *characterStats.AttackDamagePercentModifier;
     }
 
-    public T CalculateBaseDamage()
+    public float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,float upgradeAbsoluteDamage)
     {
-        throw new System.NotImplementedException();
+       return (baseDamage+ upgradeAbsoluteDamage)
+       *characterStats.CharacterUpgradePercentageModifier;
     }
 }
