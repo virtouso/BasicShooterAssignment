@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class StatsCalculator : IStatsCalculator
+public class StatsCalculator<T> : IStatsCalculator<T> where T: StatModifierTypeBase
 {
     public float CalculateBaseDamage(ICharacterStats characterStats)
     {
@@ -13,10 +13,9 @@ public class StatsCalculator : IStatsCalculator
         *characterStats.AttackDamagePercentModifier;
     }
 
-    public float CalculateUpgrade(ICharacterStats characterStats, float baseDamage,
-        ICharacterStats upgrade)
+    public float CalculateUpgrade(ICharacterStats characterStats, T modifier)
     {
-       return (baseDamage+ upgrade.CharacterDamageAbsolute)
-       *characterStats.CharacterUpgradePercentageModifier;
+        float baseDamage = CalculateBaseDamage(characterStats);
+       return modifier.Upgrade(characterStats,baseDamage);
     }
 }

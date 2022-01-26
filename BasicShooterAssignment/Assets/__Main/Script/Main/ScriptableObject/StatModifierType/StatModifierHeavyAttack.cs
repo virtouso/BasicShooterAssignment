@@ -1,12 +1,14 @@
-﻿
+﻿using UnityEngine;
 
-using UnityEngine;
+[CreateAssetMenu(fileName = ScriptableObjectReferences.HeavyAttackName,
+    menuName = ScriptableObjectReferences.HeavyAttackDirectory)]
+public class StatModifierHeavyAttack : StatModifierTypeBase
+{
+    public override StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.HeavyAttack;
 
-[CreateAssetMenu(fileName = ScriptableObjectReferences.HeavyAttackName,menuName =ScriptableObjectReferences.HeavyAttackDirectory )]
-    public class StatModifierHeavyAttack:StatModifierTypeBase
+    public override float Upgrade(ICharacterStats stats, float baseDamage)
     {
-        public override StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.HeavyAttack;
-
-        [SerializeField] private CharacterStats _stats;
-        public override ICharacterStats ChangingStats => _stats;
+        return (baseDamage + stats.CharacterDamageAbsolute)
+               * stats.CharacterUpgradePercentageModifier * 2;
     }
+}

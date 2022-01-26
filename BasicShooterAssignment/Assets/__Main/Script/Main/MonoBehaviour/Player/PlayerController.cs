@@ -5,14 +5,17 @@
 
     public class PlayerController:MonoBehaviour,IPlayerController
     {
+        [Inject] private MainManager _mainManager;
+        
+       [SerializeField]  private CharacterStats _playerDefaultStats;
+        [Inject] private CharacterRealtimeStats _playerCurrentStats;
 
-        [Inject] private ICharacterStats _playerDefaultStats;
-        [Inject] private ICharacterStats _playerCurrentStats;
-
+        
         [SerializeField] private float _moveSpeed;
         [SerializeField] private Camera _camera;
         [SerializeField] private Rigidbody2D _rigidBody;
-        
+        [SerializeField] private LayerMask _enemyLayer;
+        [SerializeField] private LayerMask _dropLayer;
         
         
         public void ApplyBaseDamage()
@@ -29,7 +32,6 @@
 
             Vector3 finalMovement = new Vector3(horizontal,vertical).normalized*_moveSpeed;
             transform.Translate(finalMovement);
-            
         }
 
         private void Look()
@@ -50,7 +52,15 @@
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            throw new NotImplementedException();
+            if (Mathf.Log(other.gameObject.layer, 2)== _enemyLayer)
+            {
+                
+            }
+            else if (Mathf.Log(other.gameObject.layer, 2)== _dropLayer)
+            {
+                
+            }
+            
         }
     }
 

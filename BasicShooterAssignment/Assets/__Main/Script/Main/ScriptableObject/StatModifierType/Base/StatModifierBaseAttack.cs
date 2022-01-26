@@ -5,6 +5,9 @@
 public class StatModifierBaseAttack : StatModifierTypeBase
 {
     public override StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.BaseAttack;
-    [SerializeField] private CharacterStats _stats;
-    public override ICharacterStats ChangingStats => _stats;
+    public override float Upgrade(ICharacterStats stats, float baseDamage)
+    {
+         return (baseDamage+ stats.CharacterDamageAbsolute)
+         *stats.CharacterUpgradePercentageModifier;
+    }
 }
