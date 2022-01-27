@@ -6,20 +6,46 @@ using UnityEngine.TestTools;
 
 public class StatsCalculator_Tests
 {
-    // A Test behaves as an ordinary method
-    [Test]
-    public void NewTestScriptSimplePasses()
+    private IStatsCalculator _statCalculator;
+
+    [SetUp]
+    public void SetUp()
     {
-        // Use the Assert class to test conditions
+        _statCalculator = new StatsCalculator();
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator NewTestScriptWithEnumeratorPasses()
+    [Test]
+    public void CalculateBaseDamageTest()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        CharacterStats stats = new CharacterStats(100,
+            200,
+            5,
+            50,
+            6.75f);
+
+
+        float result = _statCalculator.CalculateBaseDamage(stats);
+        Assert.AreEqual(result, 37125);
+    }
+
+
+    [Test]
+    public void CalculateUpgrade_Base()
+    {
+        StatModifierTypeBase modifier = new StatModifierBaseAttack(new UpgradeStats(100, 10));
+        
+        float result = modifier.Upgrade(37125);
+
+        Assert.AreEqual(372250, result);
+    }
+
+    [Test]
+    public void CalculateUpgrade_Heavy()
+    {
+        StatModifierTypeBase modifier = new StatModifierHeavyAttack(new UpgradeStats(50, 5));
+        
+        float result = modifier.Upgrade(372250);
+
+        Assert.AreEqual(3723000, result);
     }
 }

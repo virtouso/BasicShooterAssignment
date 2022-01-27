@@ -10,4 +10,11 @@ public class UpgradeStats : ScriptableObject,IUpgradeStats
 
     [SerializeField] private float _upgradePercentageDamage;
     public float UpgradePercentageDamage => _upgradePercentageDamage;
+
+
+    public UpgradeStats(int upgradeAbsoluteDamage, float upgradePercentageDamage)
+    {
+        _upgradeAbsoluteDamage = upgradeAbsoluteDamage;
+        _upgradePercentageDamage = upgradePercentageDamage;
+    }
 }

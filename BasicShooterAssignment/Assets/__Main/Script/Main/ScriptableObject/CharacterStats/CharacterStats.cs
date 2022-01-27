@@ -24,4 +24,14 @@ public class CharacterStats : ScriptableObject, ICharacterStats
     [SerializeField] private float _attackDamagePercentModifier;
 
     public float AttackDamagePercentModifier => _attackDamagePercentModifier;
+
+
+    public CharacterStats(int characterDamageAbsolute, int weaponDamageAbsolute, float characterUpgradePercentageModifier, int attackDamageAbsoluteModifier, float attackDamagePercentModifier)
+    {
+        _characterDamageAbsolute = characterDamageAbsolute;
+        _weaponDamageAbsolute = weaponDamageAbsolute;
+        _characterUpgradePercentageModifier = characterUpgradePercentageModifier;
+        _attackDamageAbsoluteModifier = attackDamageAbsoluteModifier;
+        _attackDamagePercentModifier = attackDamagePercentModifier;
+    }
 }

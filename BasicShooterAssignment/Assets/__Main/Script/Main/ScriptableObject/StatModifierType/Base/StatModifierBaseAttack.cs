@@ -12,4 +12,10 @@ public class StatModifierBaseAttack : StatModifierTypeBase
         return (baseDamage+ _stats.UpgradeAbsoluteDamage)
                *_stats.UpgradePercentageDamage;
     }
+
+
+    public StatModifierBaseAttack(UpgradeStats stats)
+    {
+        _stats = stats;
+    }
 }
