@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a655f1a01e04056468f03dc0a8fc5c61, type: 3}
   m_Name: Character Stats
   m_EditorClassIdentifier: 
-  _characterDamageAbsolute: 0
-  _weaponDamageAbsolute: 0
+  _characterDamageAbsolute: 100
+  _weaponDamageAbsolute: 200
   _characterUpgradePercentageModifier: 5
-  _attackDamageAbsoluteModifier: 0
+  _attackDamageAbsoluteModifier: 50
   _attackDamagePercentModifier: 6.75
