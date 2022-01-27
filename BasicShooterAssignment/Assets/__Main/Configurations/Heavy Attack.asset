@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd4b1446fd94adf9688b7d0d87ecd5b, type: 3}
   m_Name: Heavy Attack
   m_EditorClassIdentifier: 
-  _stats: {fileID: 0}
+  _stats: {fileID: 11400000, guid: cc588dd76527c2341ae683ea539caef6, type: 2}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6527179a29041e18dc0456388831c00, type: 3}
   m_Name: Base Attack
   m_EditorClassIdentifier: 
-  _stats: {fileID: 0}
+  _stats: {fileID: 11400000, guid: cc588dd76527c2341ae683ea539caef6, type: 2}

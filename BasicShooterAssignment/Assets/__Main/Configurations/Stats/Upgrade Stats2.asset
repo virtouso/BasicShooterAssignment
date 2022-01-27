@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590866faa64bf1a478aa59f49c755fb5, type: 3}
   m_Name: Upgrade Stats2
   m_EditorClassIdentifier: 
-  _upgradeAbsoluteDamage: 0
-  _upgradePercentageDamage: 0
+  _upgradeAbsoluteDamage: 50
+  _upgradePercentageDamage: 5

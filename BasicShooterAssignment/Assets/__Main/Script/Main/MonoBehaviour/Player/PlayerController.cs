@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     [Inject] private IMainManager _mainManager;
     [Inject] private IStatsCalculator _statsCalculator;
     [SerializeField] private CharacterStats _playerDefaultStats;
-   // private CharacterRealtimeStats _playerCurrentStats;
+  
 
 
     [SerializeField] private float _moveSpeed;
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private void Upgrade(StatModifierTypeBase statModifier,Vector3 displayPosition)
     {
         _damagePower = _statsCalculator.CalculateUpgrade(_damagePower, statModifier);
-        Debug.Log($"New Damage Power::{_damagePower}");
-        _mainManager.DisplayMessage($"New Damage Power::{_damagePower}",displayPosition);
+        Debug.Log($"New Damage Power:From{statModifier.GetType().Name}:{_damagePower}");
+        _mainManager.DisplayMessage($"New Damage Power:From{statModifier.GetType().Name}:{_damagePower}",displayPosition);
     }
     
     
@@ -70,13 +70,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
         if (other.gameObject.layer ==Mathf.Log( _enemyLayer.value, 2))
         {
             ApplyBaseDamage(_mainManager.GetEnemy(other.transform),other.transform.position);
-            Debug.Log("Hit Enemy");
+          
         }
         else if (other.gameObject.layer == Mathf.Log(_dropLayer.value, 2))
         {
             Upgrade(_mainManager.GetDrop(other.transform).StatModifier,other.transform.position);
             _mainManager.GetDrop(other.transform).Consume();
-            Debug.Log("Hit Drop");
+          
         }
     }
 }
