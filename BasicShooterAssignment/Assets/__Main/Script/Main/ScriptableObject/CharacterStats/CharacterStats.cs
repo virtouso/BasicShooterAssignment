@@ -6,44 +6,22 @@ using UnityEngine;
     menuName = ScriptableObjectReferences.CharacterStatsDirectory)]
 public class CharacterStats : ScriptableObject, ICharacterStats
 {
-    [SerializeField] private float _characterDamageAbsolute;
-    public float CharacterDamageAbsolute
-    {
-        get => _characterDamageAbsolute;
-        set => _characterDamageAbsolute = value;
-    }
+    [SerializeField] private int _characterDamageAbsolute;
+    public int CharacterDamageAbsolute => _characterDamageAbsolute;
 
-    [SerializeField] private float _weaponDamageAbsolute;
+    [SerializeField] private int _weaponDamageAbsolute;
 
-    public float WeaponDamageAbsolute
-    {
-        get => _weaponDamageAbsolute;
-        set => _weaponDamageAbsolute = value;
-    }
+    public int WeaponDamageAbsolute => _weaponDamageAbsolute;
 
     [SerializeField] private float _characterUpgradePercentageModifier;
 
-    public float CharacterUpgradePercentageModifier
-    {
-        get => _characterUpgradePercentageModifier;
-        set => _characterUpgradePercentageModifier = value;
-    }
+    public float CharacterUpgradePercentageModifier => _characterUpgradePercentageModifier;
 
-    [SerializeField] private float _attackDamageAbsoluteModifier;
+    [SerializeField] private int _attackDamageAbsoluteModifier;
 
-    public float AttackDamageAbsoluteModifier
-    {
-        get => _attackDamageAbsoluteModifier;
-        set => _attackDamageAbsoluteModifier = value;
-    }
+    public int AttackDamageAbsoluteModifier => _attackDamageAbsoluteModifier;
 
     [SerializeField] private float _attackDamagePercentModifier;
 
-    public float AttackDamagePercentModifier
-    {
-        get => _attackDamagePercentModifier;
-        set => _attackDamagePercentModifier = value;
-    }
-        
-
+    public float AttackDamagePercentModifier => _attackDamagePercentModifier;
 }

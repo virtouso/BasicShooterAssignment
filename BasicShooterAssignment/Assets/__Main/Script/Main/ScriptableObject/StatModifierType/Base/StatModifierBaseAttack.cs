@@ -4,10 +4,12 @@
     menuName = ScriptableObjectReferences.BaseAttackDirectory)]
 public class StatModifierBaseAttack : StatModifierTypeBase
 {
+    [SerializeField] private UpgradeStats _stats;
     public override StatsModifierTypeEnum StatsModifierTypeEnum => StatsModifierTypeEnum.BaseAttack;
-    public override float Upgrade(ICharacterStats stats, float baseDamage)
+    public override UpgradeStats Stats => _stats;
+    public override float Upgrade(float baseDamage)
     {
-         return (baseDamage+ stats.CharacterDamageAbsolute)
-         *stats.CharacterUpgradePercentageModifier;
+        return (baseDamage+ _stats.UpgradeAbsoluteDamage)
+               *_stats.UpgradePercentageDamage;
     }
 }

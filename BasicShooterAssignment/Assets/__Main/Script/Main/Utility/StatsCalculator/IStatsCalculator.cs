@@ -6,6 +6,5 @@ public interface IStatsCalculator
 {
    float CalculateBaseDamage(  ICharacterStats characterStats);
 
-   float CalculateUpgrade<T>(ICharacterStats characterStats, float baseDamage,
-    T modifier)where T: StatModifierTypeBase;
+   float CalculateUpgrade(float baseDamage,StatModifierTypeBase modifier);
 }

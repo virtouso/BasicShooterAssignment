@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterDamageAbsolute: 100
   _weaponDamageAbsolute: 200
-  _characterUpgradePercentageModifier: 5
+  _characterUpgradePercentageModifier: 0.05
   _attackDamageAbsoluteModifier: 50
-  _attackDamagePercentModifier: 6.75
+  _attackDamagePercentModifier: 0.0675

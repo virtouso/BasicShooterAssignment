@@ -18,10 +18,10 @@ public class MainManager : MonoBehaviour,IMainManager
         return _drops[transform];
     }
 
-    public void DisplayMessage(string message, Transform referenceEntity)
+    public void DisplayMessage(string message, Vector3 referenceEntityPosition)
     {
         _text.gameObject.SetActive(true);
-        Vector3 goalPosition = _camera.WorldToScreenPoint(referenceEntity.position);
+        Vector3 goalPosition = _camera.WorldToScreenPoint(referenceEntityPosition);
         _text.transform.position = goalPosition;
         _text.text = message;
     }

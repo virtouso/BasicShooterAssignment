@@ -7,6 +7,9 @@ public static class ScriptableObjectReferences
     public const string CharacterStatsName= "Character Stats";
     public const string CharacterStatsDirectory = "Configurations/Character Stats";
     
+    public const string UpgradeStatsName= "Upgrade Stats";
+    public const string UpgradeStatsDirectory = "Configurations/Upgrade Stats";
+    
     public const string HeavyAttackName= "Heavy Attack";
     public const string HeavyAttackDirectory = "Configurations/Heavy Attacks";
     
